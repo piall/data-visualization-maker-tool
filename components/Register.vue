@@ -1,0 +1,85 @@
+<template>
+  <div>
+    <center>
+      <div>
+        <b-container>
+          <b-card
+            title="রেজিস্ট্রেশন করুন"
+            img-src=".././assets/man_standing.svg"
+            img-alt="Image"
+            img-top
+            tag="article"
+            style="margin-top:40px;"
+            class="mb-2"
+          >
+            <b-container fluid>
+              <b-row class="my-2">
+                <!-- <b-col sm="3">
+      <label for="input-none">ইমেইল:</label>
+                </b-col>-->
+                <b-col sm="12">
+                  <b-form-input id="input-none" :state="null" placeholder="আপনার ইমেইল দিন"></b-form-input>
+                </b-col>
+              </b-row>
+
+              <b-row class="my-2">
+                <!-- <b-col sm="3">
+      <label for="input-valid">পাসওয়ার্ড:</label>
+                </b-col>-->
+                <b-col sm="12">
+                  <b-form-input id="input-valid" :state="true" placeholder="আপনার পাসওয়ার্ড দিন"></b-form-input>
+                  <!-- state false will make the icon cross -->
+                </b-col>
+              </b-row>
+              <b-row class="my-2">
+                <b-col sm="12">
+                  <b-form-input
+                    id="input-valid"
+                    :state="true"
+                    placeholder="পুনরায় আপনার পাসওয়ার্ড দিন"
+                  ></b-form-input>
+                  <!-- state false will make the icon cross -->
+                </b-col>
+              </b-row>
+            </b-container>
+
+            <center>
+              <b-button variant="primary" href="#">একাউন্ট খুলুন</b-button>
+            </center>
+            <hr />
+            <center>
+              <b-button variant="success" href="#">লগইন করুন</b-button>
+            </center>
+          </b-card>
+        </b-container>
+      </div>
+    </center>
+  </div>
+</template>
+
+<style lang="css" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&display=swap");
+
+.card {
+  margin: 155px;
+  padding: 20px;
+  font-family: "Baloo Da 2";
+  max-width: 540px;
+}
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+}
+.btn {
+  margin: 15px;
+  font-weight: 600;
+}
+.form-control {
+  font-weight: 400;
+}
+hr {
+  margin: 0px;
+}
+</style>
