@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    
   </div>
 </template>
 
@@ -11,3 +11,11 @@ export default {
   }
 };
 </script>
+
+
+<style lang="css" scoped>
+.col {
+  background-color: hotpink;
+  margin: 0.5px;
+}
+</style>

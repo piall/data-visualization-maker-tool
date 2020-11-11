@@ -41,7 +41,6 @@
 </template>
 
 <style lang="css" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&display=swap");
 
 .jumbotron {
   margin: 155px;
