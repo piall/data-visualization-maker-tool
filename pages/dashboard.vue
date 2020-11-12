@@ -28,32 +28,38 @@ export default {
       names: [
         {
           visualizationName: "পাই চার্ট (Pie Chart)",
-          imageAddress: "/_nuxt/assets/deconstructed.svg"
+          imageAddress: "/_nuxt/assets/deconstructed.svg",
+          routingAddress: "./visualization/pieChart"
         },
         {
           visualizationName: "বার চার্ট (Bar Chart)",
-          imageAddress: "/_nuxt/assets/deconstructed.svg"
+          imageAddress: "/_nuxt/assets/deconstructed.svg",
+          routingAddress: "./visualization/barChart"
         },
         {
           visualizationName: "হিস্টোগ্রাম (Histogram)",
-          imageAddress: "/_nuxt/assets/deconstructed.svg"
+          imageAddress: "/_nuxt/assets/deconstructed.svg",
+          routingAddress: "./visualization/histogram"
         },
         {
           visualizationName: "স্কেটার প্লট (Scatter Plot)",
-          imageAddress: "/_nuxt/assets/deconstructed.svg"
+          imageAddress: "/_nuxt/assets/deconstructed.svg",
+          routingAddress: "./visualization/scatterPlot"
         }
       ]
       // screenWidth: this.$screen.width + "px",
       // screenHeight: this.$screen.height + "px",
     };
   },
-  methods: {},
+  methods: {
+    changeRoute() {
+      location.replace("https://www.w3schools.com");
+      console.log("hi");
+    }
+  },
   watch: {}
 };
 </script>
 
 <style scoped>
-.cards {
-  padding: 0px 0px;
-}
 </style>
