@@ -11,7 +11,7 @@
           v-for="index in names"
           :key="index.visualizationName"
         >
-          <Card :visualizationInfo="index" />
+          <Card :visualizationInfo="index"  />
         </b-col>
       </b-row>
     </b-container>
