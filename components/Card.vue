@@ -7,9 +7,10 @@
       tag="article"
       style="max-width: 25rem;"
       class="mb-2 my-3"
+      @click="alert('hi')"
     >
       <b-card-text>{{ visualizationInfo.visualizationName }}</b-card-text>
-      <b-button :href="visualizationInfo.routingAddress" variant="primary">বিস্তারিত</b-button>
+      <b-button :href="visualizationInfo.routingAddress" variant="primary">তৈরি করুন</b-button>
     </b-card>
   </center>
 </template>
@@ -33,12 +34,11 @@ export default {
   align-items: center;
 } */
 
-
-
 .card:hover {
   cursor: pointer;
 }
-.card-text, .btn-primary {
+.card-text,
+.btn-primary {
   font-family: "Baloo Da 2";
   font-weight: 600;
 }
