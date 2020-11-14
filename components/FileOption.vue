@@ -12,10 +12,18 @@
       <b-button class="custom">ফাইল আপলোড করুন</b-button>
       <br />
       <hr />
-      <b-button variant="primary">ম্যানুয়াল ভাবে ইনপুট করুন</b-button>
+      <b-button variant="primary" @click="$emit('manualInput')">ম্যানুয়াল ভাবে ইনপুট করুন</b-button>
     </b-card>
   </center>
 </template>
+
+<script>
+export default {
+  methods: {
+
+  }
+};
+</script>
 
 <style lang="css" scoped>
 * {
