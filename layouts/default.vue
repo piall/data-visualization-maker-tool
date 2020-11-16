@@ -1,37 +1,37 @@
 <template>
   <div>
-    <b-navbar toggleable="sm">
-      <!-- <b-navbar-brand href="#">NavBar</b-navbar-brand> -->
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <NuxtLink to="/dashboard">ড্যাশবোর্ড</NuxtLink>
-          <NuxtLink to="/" v-if="loginStatus">সেভ করা ভিজুয়ালাইজেশন</NuxtLink>
-        </b-navbar-nav>
-        <b-navbar-nav class="ml-auto" v-if="loginStatus">
-          <NuxtLink to="/">লগ আউট</NuxtLink>
-        </b-navbar-nav>
-        <b-navbar-nav class="ml-auto" v-else>
-          <NuxtLink to="/register">একাউন্ট তৈরি করুন</NuxtLink>
-          <NuxtLink to="/login">লগ ইন</NuxtLink>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
+    <Header :loginStatus="loginStatus" />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&display=swap");
-.navbar {
-  background-color: #f9a826;
-  font-family: "Baloo Da 2";
-  font-weight: 500;
+@font-face {
+  font-family: Noto Sans;
+  font-weight: normal;
+  src: url("~assets/fonts/Noto_Sans_Bengali-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: Baloo Da;
+  src: url("~assets/fonts/Baloo_Da-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: Noto Sans;
+  font-weight: bold;
+  src: url("~assets/fonts/Noto_Sans_Bengali-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Charukola";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("~assets/fonts/Charukola-Regular.ttf") format("truetype");
 }
 
-a {
-  color: azure;
-  margin-right: 13px;
+body {
+  background-color: #f9f7cf;
 }
 /* 
 html {
@@ -51,7 +51,7 @@ html {
 export default {
   data() {
     return {
-      loginStatus: true
+      loginStatus: false
     };
   }
 };
