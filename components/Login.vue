@@ -1,59 +1,67 @@
 <template>
-  <div>
+  <center>
     <b-container fluid="lg">
-      <b-jumbotron>
-        <!-- <center><h1>লগইন করূন</h1></center> -->
-        <!-- <hr class="my-4"> -->
-        <b-img src=".././assets/login.svg" fluid alt="Fluid-grow image"></b-img>
+      <b-card
+        img-src=".././assets/login.svg"
+        img-alt="Image"
+        img-top
+        tag="article"
+        style="margin-top:40px;"
+        class="mb-2"
+      >
         <b-container fluid>
-          <img src alt />
-
-          <b-row class="my-1">
-            <!-- <b-col sm="3">
-      <label for="input-none">ইমেইল:</label>
-            </b-col>-->
+          <b-row class="my-2">
             <b-col sm="12">
               <b-form-input id="input-none" :state="null" placeholder="আপনার ইমেইল দিন"></b-form-input>
             </b-col>
           </b-row>
-
-          <b-row class="my-1">
-            <!-- <b-col sm="3">
-      <label for="input-valid">পাসওয়ার্ড:</label>
-            </b-col>-->
+          <b-row class="my-2">
             <b-col sm="12">
-              <b-form-input id="input-valid" :state="true" placeholder="আপনার পাসওয়ার্ড দিন"></b-form-input>
-              <!-- state false will make the icon cross -->
+              <b-form-input id="input-valid" :state="null" placeholder="আপনার পাসওয়ার্ড দিন"></b-form-input>
             </b-col>
           </b-row>
         </b-container>
-
-        <center>
-          <b-button variant="primary" href="#">লগ ইন</b-button>
-        </center>
+        <b-button variant="primary">লগ ইন</b-button>
         <hr />
-        <center>
-          <b-button variant="success" href="#">নতুন একাউন্ট তৈরি করুন</b-button>
-        </center>
-      </b-jumbotron>
+        <b-button variant="success" href="/register">নতুন একাউন্ট তৈরি করুন</b-button>
+      </b-card>
     </b-container>
-  </div>
+  </center>
 </template>
 
 <style lang="css" scoped>
-
-.jumbotron {
+.card {
   margin: 155px;
   padding: 20px;
   font-family: "Baloo Da 2";
+  max-width: 50%;
 }
+
+.card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+}
+
 .btn {
   margin: 15px;
   font-weight: 600;
+  border: none;
 }
+
+.btn-primary {
+  background-color: #f9a826;
+}
+
+.btn-success {
+  background-color: #2f2e41;
+}
+
 .form-control {
   font-weight: 400;
 }
+
 hr {
   margin: 0px;
 }
