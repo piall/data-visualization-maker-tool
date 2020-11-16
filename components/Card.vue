@@ -34,12 +34,24 @@ export default {
   align-items: center;
 } */
 
-.card:hover {
+/* .card:hover {
   cursor: pointer;
+} */
+
+.card-text {
+  font-family: "Baloo Da 2";
+  font-weight: 600;
 }
-.card-text,
+
 .btn-primary {
   font-family: "Baloo Da 2";
   font-weight: 600;
+  background-color: #2f2e41;
+  border: none;
+}
+
+.btn:hover {
+  background-color: black;
+  border: none;
 }
 </style>
