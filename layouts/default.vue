@@ -7,7 +7,6 @@
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&display=swap");
 @font-face {
   font-family: Noto Sans;
   font-weight: normal;
@@ -18,15 +17,16 @@
   src: url("~assets/fonts/Baloo_Da-Regular.ttf") format("truetype");
 }
 @font-face {
+  font-family: Baloo Da 2;
+  src: url("~assets/fonts/BalooDa2-Regular.ttf") format("truetype");
+}
+@font-face {
   font-family: Noto Sans;
   font-weight: bold;
   src: url("~assets/fonts/Noto_Sans_Bengali-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Charukola";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
   src: url("~assets/fonts/Charukola-Regular.ttf") format("truetype");
 }
 
