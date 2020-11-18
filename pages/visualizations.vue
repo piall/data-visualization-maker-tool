@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-container fluid>
-      <b-row>
+      <b-row class="p-5">
         <b-col
           sm="12"
           md="6"
@@ -19,9 +19,6 @@
 </template>
 
 <script>
-// import Vue from "vue";
-// import VueScreen from "vue-screen";
-// Vue.use(VueScreen);
 export default {
   data() {
     return {
