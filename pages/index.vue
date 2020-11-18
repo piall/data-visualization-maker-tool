@@ -16,34 +16,34 @@
           এই ওয়েবসাইট এর সবগুলো ফিচার বিনামুল্য ব্যবহার করা যাবে। বর্তমানে ভিজুয়ালাইজেশন এর ধরন সিমীত হলেও ভবিষ্যতে এর পরিধি বাড়ানো হবে।
         </p>
       </section>
-      <section class="my-4">
+      <section class="my-4 bottom-content">
         <!-- converted Unicode to ANSI -->
         <!-- <h4>ভিজুয়ালাইজেশন সমূহ</h4> -->
         <h4>wfRyqvjvB‡Rkb mg~n</h4>
         <div class="mb-2 my-3">
           <div class="row no-gutters d-flex justify-content-center">
             <div class="cols">
-              <b-avatar class="mx-4" src="~/assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>হিস্টোগ্রাম</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~/assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>পাই চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~/assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>বার চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~/assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>স্কেটার প্লট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~/assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>লাইন চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~/assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>হিট ম্যাপ</p>
             </div>
           </div>
@@ -67,6 +67,10 @@ export default {
   background-image: url("paper.gif");
   background-color: #cccccc;
 } */
+
+.bottom-content {
+  padding-bottom: 10px;
+}
 
 p {
   font-family: "Baloo Da 2";
