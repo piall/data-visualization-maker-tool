@@ -16,7 +16,12 @@
       <label for="input-none">ইমেইল:</label>
             </b-col>-->
             <b-col sm="12">
-              <b-form-input id="input-none" :state="null" placeholder="আপনার ইমেইল দিন"></b-form-input>
+              <b-form-input
+                id="input-none"
+                type="email"
+                :state="null"
+                placeholder="আপনার ইমেইল দিন"
+              ></b-form-input>
               <!-- state null will make like normal input box -->
             </b-col>
           </b-row>
@@ -26,13 +31,23 @@
       <label for="input-valid">পাসওয়ার্ড:</label>
             </b-col>-->
             <b-col sm="12">
-              <b-form-input id="input-valid" :state="null" placeholder="আপনার পাসওয়ার্ড দিন"></b-form-input>
+              <b-form-input
+                id="input-valid"
+                type="password"
+                :state="null"
+                placeholder="আপনার পাসওয়ার্ড দিন"
+              ></b-form-input>
               <!-- state true will make the icon green -->
             </b-col>
           </b-row>
           <b-row class="my-2">
             <b-col sm="12">
-              <b-form-input id="input-valid" :state="null" placeholder="পুনরায় আপনার পাসওয়ার্ড দিন"></b-form-input>
+              <b-form-input
+                id="input-valid"
+                type="password"
+                :state="null"
+                placeholder="পুনরায় আপনার পাসওয়ার্ড দিন"
+              ></b-form-input>
               <!-- state false will make the icon cross -->
             </b-col>
           </b-row>
@@ -46,7 +61,6 @@
 </template>
 
 <style lang="css" scoped>
-
 .card {
   margin: 155px;
   padding: 20px;
