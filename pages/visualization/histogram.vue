@@ -19,8 +19,8 @@
                 <b-form-input
                   :state="null"
                   placeholder="আপনার ডেটা দিন"
-                  @keyup.enter="addRowToFirstColumn"
-                  @click.ctrl="deleteRowOfFirstColumn(index)"
+                  @keyup.enter="addRowToColumn"
+                  @click.ctrl="deleteRowOfColumn(index)"
                   v-model="inputBoxFirstColumn[index]"
                 ></b-form-input>
               </b-col>
@@ -39,10 +39,11 @@
                 class="my-1"
               >
                 <b-form-input
+                  type="number"
                   :state="null"
                   placeholder="আপনার ডেটা দিন"
-                  @keyup.enter="addRowToSecondColumn"
-                  @click.ctrl="deleteRowOfSecondColumn(index)"
+                  @keyup.enter="addRowToColumn"
+                  @click.ctrl="deleteRowOfColumn(index)"
                   v-model="inputBoxSecondColumn[index]"
                 ></b-form-input>
               </b-col>
@@ -68,19 +69,13 @@ export default {
     change() {
       this.manualDataInput = true;
     },
-    addRowToFirstColumn() {
+    addRowToColumn() {
       this.inputBoxFirstColumn.push("");
-    },
-    addRowToSecondColumn() {
       this.inputBoxSecondColumn.push("");
     },
-    deleteRowOfFirstColumn(index) {
+    deleteRowOfColumn(index) {
       if (this.inputBoxFirstColumn.length > 1) {
         this.inputBoxFirstColumn.splice(index, 1);
-      }
-    },
-    deleteRowOfSecondColumn(index) {
-      if (this.inputBoxSecondColumn.length > 1) {
         this.inputBoxSecondColumn.splice(index, 1);
       }
     }
@@ -109,14 +104,9 @@ li {
 }
 
 .btn-primary {
-  background-color: #f9a826;
+  background-color: #2f2e41;
   border: none;
   font-weight: 600;
   font-family: "Baloo Da 2";
-}
-
-.btn:hover {
-  background-color: black;
-  border: none;
 }
 </style>
