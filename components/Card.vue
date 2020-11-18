@@ -1,5 +1,5 @@
 <template>
-  <center>
+  <center class="custom">
     <b-card
       :img-src="visualizationInfo.imageAddress"
       img-alt
@@ -54,4 +54,6 @@ export default {
   background-color: black;
   border: none;
 }
+
+
 </style>
