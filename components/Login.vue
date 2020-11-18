@@ -12,12 +12,22 @@
         <b-container fluid>
           <b-row class="my-2">
             <b-col sm="12">
-              <b-form-input id="input-none" :state="null" placeholder="আপনার ইমেইল দিন"></b-form-input>
+              <b-form-input
+                id="input-none"
+                type="email"
+                :state="null"
+                placeholder="আপনার ইমেইল দিন"
+              ></b-form-input>
             </b-col>
           </b-row>
           <b-row class="my-2">
             <b-col sm="12">
-              <b-form-input id="input-valid" :state="null" placeholder="আপনার পাসওয়ার্ড দিন"></b-form-input>
+              <b-form-input
+                id="input-valid"
+                type="password"
+                :state="null"
+                placeholder="আপনার পাসওয়ার্ড দিন"
+              ></b-form-input>
             </b-col>
           </b-row>
         </b-container>
