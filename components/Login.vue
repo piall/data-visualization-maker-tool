@@ -11,7 +11,7 @@
       >
         <b-container fluid>
           <b-row class="my-2">
-            <b-col sm="12">
+            <b-col>
               <b-form-input
                 id="input-none"
                 type="email"
@@ -21,7 +21,7 @@
             </b-col>
           </b-row>
           <b-row class="my-2">
-            <b-col sm="12">
+            <b-col>
               <b-form-input
                 id="input-valid"
                 type="password"
@@ -40,11 +40,18 @@
 </template>
 
 <style lang="css" scoped>
+div.container-lg {
+  /* background-color: aqua; */
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
 .card {
-  margin: 155px;
+  /* margin: 155px; */
   padding: 20px;
   font-family: "Baloo Da 2";
-  max-width: 50%;
 }
 
 .card-img-top {
