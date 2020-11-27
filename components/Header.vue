@@ -6,7 +6,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <NuxtLink to="/">হোম</NuxtLink>
-        <NuxtLink to="/visualizations">ভিজুয়ালাইজেশন সমূহ</NuxtLink>
+        <NuxtLink to="/visualizations">ব্যাবহার করুন</NuxtLink>
         <NuxtLink to="/savedVisualization" v-if="loginStatus">সেভ করা ভিজুয়ালাইজেশন</NuxtLink>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto" v-if="loginStatus">
