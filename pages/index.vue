@@ -22,30 +22,38 @@
         <h4>wfRyqvjvB‡Rkb mg~n</h4>
         <div class="mb-2 my-3">
           <div class="row no-gutters d-flex justify-content-center">
-            <div class="cols">
-              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
+            <!-- <div class="cols">
+              <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>হিস্টোগ্রাম</p>
+            </div>-->
+            <div class="cols">
+              <b-avatar  href="/visualization/slopeChart" class="mx-4" src="~assets/D3SlopeChart.svg" size="8rem"></b-avatar>
+              <p>স্লপ চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar  href="/visualization/pieChart" class="mx-4" src="~assets/D3PieChart.svg" size="8rem"></b-avatar>
               <p>পাই চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar  href="/visualization/barChart" class="mx-4" src="~assets/D3BarChart.svg" size="8rem"></b-avatar>
               <p>বার চার্ট</p>
             </div>
-            <div class="cols">
+            <!-- <div class="cols">
               <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>স্কেটার প্লট</p>
-            </div>
+            </div>-->
             <div class="cols">
-              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
+              <b-avatar  href="/visualization/lineChart" class="mx-4" src="~assets/D3LineChart.svg" size="8rem"></b-avatar>
               <p>লাইন চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
-              <p>হিট ম্যাপ</p>
+              <b-avatar  href="/visualization/slicesChart" class="mx-4" src="~assets/D3SlicesChart.svg" size="8rem"></b-avatar>
+              <p>স্লাইসেস চার্ট</p>
             </div>
+            <!-- <div class="cols">
+              <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
+              <p>হিট ম্যাপ</p>
+            </div>-->
           </div>
         </div>
       </section>
