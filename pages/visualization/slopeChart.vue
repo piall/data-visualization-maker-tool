@@ -8,21 +8,16 @@
         <li>সারি বাদ দেয়ার জন্য Ctrl + click করুন</li>
       </ul>
       <b-card-group deck class="mx-1 my-3">
-        <!-- {{ d }} -->
         <b-card header="আপনার ডেটা দিন" header-tag="header">
-          <!-- <template #header>
-              <h6 class="mb-0">start</h6>
-          </template>-->
-          <!-- <b-row>
-              <b-col sm="12" md="4">শুরু</b-col>
-              <b-col sm="12" md="4">শেষ</b-col>
-              <b-col sm="12" md="4">নাম</b-col>
-          </b-row>-->
-          <b-row class="my-2" v-for="(dataObjects, ArrayIndex) in chart_data" :key="ArrayIndex">
+          <b-row
+            class="my-2"
+            v-for="(dataObjects, ArrayIndex) in chart_data"
+            :key="ArrayIndex"
+          >
             <b-col
               sm="12"
               md="4"
-              v-for="(data,ObjectKey) in dataObjects"
+              v-for="(data, ObjectKey) in dataObjects"
               :key="ObjectKey"
               class="my-1"
             >
@@ -33,7 +28,7 @@
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey=='start'"
+                v-if="ObjectKey == 'start'"
               ></b-form-input>
               <b-form-input
                 type="number"
@@ -42,7 +37,7 @@
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey=='end'"
+                v-if="ObjectKey == 'end'"
               ></b-form-input>
               <b-form-input
                 type="text"
@@ -51,15 +46,17 @@
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey=='name'"
+                v-if="ObjectKey == 'name'"
               ></b-form-input>
             </b-col>
           </b-row>
         </b-card>
-        <!-- <b-button variant="primary">ভিজুয়ালাইজেশন তৈরি করুন</b-button> -->
-      </b-card-group>
-      <!-- {{chart_data}} -->
-      <D3SlopeChart :config="chart_config" :datum="chart_data" v-if="reload"></D3SlopeChart>
+      </b-card-group> 
+      <D3SlopeChart
+        :config="chart_config"
+        :datum="chart_data"
+        v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''"
+      ></D3SlopeChart>
     </center>
   </div>
 </template>
@@ -67,7 +64,6 @@
 <script>
 import { D3SlopeChart } from "vue-d3-charts";
 export default {
-  name: "D3SlopeChart",
   components: {
     D3SlopeChart
   },
@@ -85,7 +81,7 @@ export default {
         }
       },
       chart_data: [{ start: "", end: "", name: "" }],
-      // count: 0
+      count: 0,
       reload: true
     };
   },
@@ -149,10 +145,17 @@ li {
   font-weight: 500;
 }
 
-.btn-primary {
+.card{
+    background-color: #faf7c2;
+    /* color:white; */
+    font-weight: bold;
+    border: none;
+}
+
+/* .btn-primary {
   background-color: #2f2e41;
   border: none;
   font-weight: 600;
   font-family: "Baloo Da 2";
-}
+} */
 </style>
