@@ -46,10 +46,10 @@
               <b-avatar  href="/visualization/lineChart" class="mx-4" src="~assets/D3LineChart.svg" size="8rem"></b-avatar>
               <p>লাইন চার্ট</p>
             </div>
-            <div class="cols">
+            <!-- <div class="cols">
               <b-avatar  href="/visualization/slicesChart" class="mx-4" src="~assets/D3SlicesChart.svg" size="8rem"></b-avatar>
               <p>স্লাইসেস চার্ট</p>
-            </div>
+            </div> -->
             <!-- <div class="cols">
               <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
               <p>হিট ম্যাপ</p>
@@ -92,5 +92,13 @@ h4 {
   font-weight: bold;
   font-size: 28px;
   color: #f9a826;
+}
+
+.b-avatar{
+  background-color: #fdf9ad;
+}
+
+.b-avatar:hover{
+  background-color:  #fcf798;
 }
 </style>
