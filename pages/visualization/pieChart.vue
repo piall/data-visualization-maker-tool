@@ -22,18 +22,18 @@
               class="my-1"
             >
               <b-form-input
-                type="text"
+                type="number"
                 :state="null"
-                placeholder="ভ্যালু-১"
+                placeholder="সংখ্যা"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
                 v-if="ObjectKey == 'value1'"
               ></b-form-input>
               <b-form-input
-                type="number"
+                type="text"
                 :state="null"
-                placeholder="ভ্যালু-২"
+                placeholder="টেক্সট / স্ট্রিং"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
