@@ -24,7 +24,7 @@
               <b-form-input
                 type="number"
                 :state="null"
-                placeholder="ভ্যলু-১"
+                placeholder="সংখ্যা"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
@@ -33,16 +33,16 @@
               <b-form-input
                 type="number"
                 :state="null"
-                placeholder="ভ্যালু-২"
+                placeholder="সংখ্যা"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
                 v-if="ObjectKey == 'value2'"
               ></b-form-input>
               <b-form-input
-                type="number"
+                type="text"
                 :state="null"
-                placeholder="ভ্যালু-৩"
+                placeholder="টেক্সট / স্ট্রিং"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
