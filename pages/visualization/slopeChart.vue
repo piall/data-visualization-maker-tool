@@ -24,29 +24,29 @@
               <b-form-input
                 type="number"
                 :state="null"
-                placeholder="শুরু"
+                placeholder="সংখ্যা"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey == 'start'"
+                v-if="ObjectKey == 'value1'"
               ></b-form-input>
               <b-form-input
                 type="number"
                 :state="null"
-                placeholder="শেষ"
+                placeholder="সংখ্যা"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey == 'end'"
+                v-if="ObjectKey == 'value2'"
               ></b-form-input>
               <b-form-input
                 type="text"
                 :state="null"
-                placeholder="নাম"
+                placeholder="টেক্সট / স্ট্রিং"
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey == 'name'"
+                v-if="ObjectKey == 'value3'"
               ></b-form-input>
             </b-col>
           </b-row>
@@ -55,7 +55,7 @@
       <D3SlopeChart
         :config="chart_config"
         :datum="chart_data"
-        v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''"
+        v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!=''"
       ></D3SlopeChart>
     </center>
   </div>
@@ -71,7 +71,7 @@ export default {
     return {
       manualDataInput: true,
       chart_config: {
-        key: "name",
+        key: "value3",
         color: {
           scheme: "schemeCategory10"
         },
@@ -80,7 +80,7 @@ export default {
           duration: 1000
         }
       },
-      chart_data: [{ start: "", end: "", name: "" }],
+      chart_data: [{ value1: "", value2: "", value3: "" }],
       count: 0,
       reload: true
     };
@@ -90,7 +90,7 @@ export default {
       this.manualDataInput = true;
     },
     addRowToColumn() {
-      this.chart_data.push({ start: "", end: "", name: "" });
+      this.chart_data.push({ value1: "", value2: "", value3: "" });
     },
     deleteRowOfColumn(index) {
       if (this.chart_data.length > 1) {
