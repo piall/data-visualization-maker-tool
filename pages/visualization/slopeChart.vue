@@ -7,6 +7,9 @@
         <li>পরের সারিতে যাওয়ার জন্য tab চাপুন</li>
         <li>সারি বাদ দেয়ার জন্য Ctrl + click করুন</li>
       </ul>
+      <b-button variant="warning" @click="fillData">
+        ডেমো ডেটা ব্যাবহার করুন
+      </b-button>
       <b-card-group deck class="mx-1 my-3">
         <b-card header="আপনার ডেটা দিন" header-tag="header">
           <b-row
@@ -28,7 +31,7 @@
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey == 'value1'"
+                v-if="ObjectKey == 'start'"
               ></b-form-input>
               <b-form-input
                 type="number"
@@ -37,7 +40,7 @@
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey == 'value2'"
+                v-if="ObjectKey == 'end'"
               ></b-form-input>
               <b-form-input
                 type="text"
@@ -46,17 +49,24 @@
                 @keyup.enter="addRowToColumn"
                 @click.ctrl="deleteRowOfColumn(ArrayIndex)"
                 v-model="chart_data[ArrayIndex][ObjectKey]"
-                v-if="ObjectKey == 'value3'"
+                v-if="ObjectKey == 'name'"
               ></b-form-input>
             </b-col>
           </b-row>
         </b-card>
       </b-card-group> 
-      <D3SlopeChart
-        :config="chart_config"
-        :datum="chart_data"
-        v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!=''"
-      ></D3SlopeChart>
+     <b-row>
+       <b-col md="10">
+          <D3SlopeChart
+          :config="chart_config"
+          :datum="chart_data"
+          v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''"
+        ></D3SlopeChart>
+       </b-col>
+       <!-- <b-col v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''">
+         <b-button variant="warning">কালার বদলানো</b-button>
+       </b-col> -->
+     </b-row>
     </center>
   </div>
 </template>
@@ -71,16 +81,22 @@ export default {
     return {
       manualDataInput: true,
       chart_config: {
-        key: "value3",
+        key: 'name',
         color: {
-          scheme: "schemeCategory10"
+          scheme: 'schemeCategory10'
         },
         transition: {
-          ease: "easeBounceOut",
+          ease: 'easeBounceOut',
           duration: 1000
-        }
+        },
+        margin: {
+          top: 10,
+          right: 200,
+          bottom: 20,
+          left: 200
+        },
       },
-      chart_data: [{ value1: "", value2: "", value3: "" }],
+      chart_data: [{ start: "", end: "", name: ""  }],
       count: 0,
       reload: true
     };
@@ -90,19 +106,25 @@ export default {
       this.manualDataInput = true;
     },
     addRowToColumn() {
-      this.chart_data.push({ value1: "", value2: "", value3: "" });
+      this.chart_data.push({ start: "", end: "", name: "" });
     },
     deleteRowOfColumn(index) {
       if (this.chart_data.length > 1) {
         this.chart_data.splice(index, 1);
       }
-      console.log(index);
+    },
+    fillData(){
+      this.chart_data = [
+          { start: 2355, end: 5855, name: "Lorem" },
+          { start: 4260, end: 6510, name: "Ipsum" },
+          { start: 5029, end: 5138, name: "Dolor" }
+      ];
     }
   },
   watch: {
     chart_data: {
       handler: function() {
-        console.log("changed data");
+        // console.log("changed data");
         this.reload = false;
         this.$nextTick(function() {
           this.reload = true;
@@ -128,6 +150,7 @@ input[type="number"] {
 }
 * {
   font-family: "Baloo Da 2";
+  overflow: hidden;
 }
 
 h6 {

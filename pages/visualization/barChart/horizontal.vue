@@ -7,6 +7,9 @@
         <li>পরের সারিতে যাওয়ার জন্য tab চাপুন</li>
         <li>সারি বাদ দেয়ার জন্য Ctrl + click করুন</li>
       </ul>
+      <b-button variant="warning" @click="fillData">
+        ডেমো ডেটা ব্যাবহার করুন
+      </b-button>
       <b-card-group deck class="mx-1 my-3">
         <b-card header="আপনার ডেটা দিন" header-tag="header">
           <b-row
@@ -52,11 +55,18 @@
           </b-row>
         </b-card>
       </b-card-group> 
-      <D3BarChart 
-        :config="chart_config"
-        :datum="chart_data"
-        v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!=''"
-      ></D3BarChart >
+      <b-row>
+       <b-col md="10">
+          <D3BarChart 
+          :config="chart_config"
+          :datum="chart_data"
+          v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!=''"
+          ></D3BarChart >
+       </b-col>
+       <!-- <b-col v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''">
+         <b-button variant="warning">কালার বদলানো</b-button>
+       </b-col> -->
+     </b-row>
     </center>
   </div>
 </template>
@@ -84,7 +94,14 @@ export default {
             value2: '#b35899', 
           },
         },
+         margin: {
+          top: 10,
+          right: 200,
+          bottom: 20,
+          left: 200
+        },
       },
+      
     };
   },
    methods: {
@@ -98,13 +115,21 @@ export default {
       if (this.chart_data.length > 1) {
         this.chart_data.splice(index, 1);
       }
-      console.log(index);
+    },
+    fillData(){
+      this.chart_data = [
+          {value1: 20, value2: 62, value3: 'lorem'},
+          {value1: 28, value2: 47, value3: 'ipsum'},
+          {value1: 35, value2: 36, value3: 'dolor'},
+          {value1: 60, value2: 24, value3: 'sit'},
+          {value1: 65, value2: 18, value3: 'amet'},
+      ];
     }
   },
   watch: {
     chart_data: {
       handler: function() {
-        console.log("changed data");
+        // console.log("changed data");
         this.reload = false;
         this.$nextTick(function() {
           this.reload = true;
@@ -130,6 +155,7 @@ input[type="number"] {
 }
 * {
   font-family: "Baloo Da 2";
+  overflow: hidden;
 }
 
 h6 {

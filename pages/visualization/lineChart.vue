@@ -7,6 +7,9 @@
         <li>পরের সারিতে যাওয়ার জন্য tab চাপুন</li>
         <li>সারি বাদ দেয়ার জন্য Ctrl + click করুন</li>
       </ul>
+      <b-button variant="warning" @click="fillData">
+        ডেমো ডেটা ব্যাবহার করুন
+      </b-button>
       <b-card-group deck class="mx-1 my-3">
         <b-card header="আপনার ডেটা দিন" header-tag="header">
           <b-row
@@ -52,11 +55,19 @@
           </b-row>
         </b-card>
       </b-card-group> 
-      <D3LineChart 
+       <b-row>
+       <b-col md="10">
+          <D3LineChart 
         :config="chart_config"
         :datum="chart_data"
         v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!=''"
       ></D3LineChart >
+       </b-col>
+       <!-- <b-col v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''">
+         <b-button variant="warning">কালার বদলানো</b-button>
+       </b-col> -->
+     </b-row>
+      
     </center>
   </div>
 </template>
@@ -84,9 +95,15 @@ export default {
         points:false,
         axis: {
           yTicks: 3,
-        }
+        },
+        margin: {
+          top: 20,
+          right: 20,
+          bottom: 20,
+          left: 140
+        },
       },
-      count:2010
+      // count:2010
     };
   },
    methods: {
@@ -100,13 +117,26 @@ export default {
       if (this.chart_data.length > 1) {
         this.chart_data.splice(index, 1);
       }
-      console.log(index);
+    },
+    fillData(){
+        this.chart_data = [
+        {value1: 238, value2: 134, value3: 2000},
+        {value1: 938, value2: 478, value3: 2001},
+        {value1: 1832, value2: 1392, value3: 2002},
+        {value1: 2092, value2: 2343, value3: 2003},
+        {value1: 2847, value2: 2346, value3: 2004},
+        {value1: 2576, value2: 2233, value3: 2005},
+        {value1: 2524, value2: 2325, value3: 2006},
+        {value1: 1648, value2: 2456, value3: 2007},
+        {value1: 2479, value2: 2329, value3: 2008},
+        {value1: 3200, value2: 2438, value3: 2009}
+      ];
     }
   },
   watch: {
     chart_data: {
       handler: function() {
-        console.log("changed data");
+        // console.log("changed data");
         this.reload = false;
         this.$nextTick(function() {
           this.reload = true;
@@ -132,6 +162,7 @@ input[type="number"] {
 }
 * {
   font-family: "Baloo Da 2";
+  overflow: hidden;
 }
 
 h6 {

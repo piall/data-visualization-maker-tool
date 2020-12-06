@@ -7,6 +7,9 @@
         <li>পরের সারিতে যাওয়ার জন্য tab চাপুন</li>
         <li>সারি বাদ দেয়ার জন্য Ctrl + click করুন</li>
       </ul>
+      <b-button variant="warning" @click="fillData">
+        ডেমো ডেটা ব্যাবহার করুন
+      </b-button>
       <b-card-group deck class="mx-1 my-3">
         <b-card header="আপনার ডেটা দিন" header-tag="header">
           <b-row
@@ -42,12 +45,19 @@
             </b-col>
           </b-row>
         </b-card>
-      </b-card-group> 
-      <D3PieChart 
-        :config="chart_config"
-        :datum="chart_data"
-        v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!=''"
-      ></D3PieChart >
+      </b-card-group>
+      <b-row>
+       <b-col md="10">
+          <D3PieChart 
+          :config="chart_config"
+          :datum="chart_data"
+          v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!=''"
+        ></D3PieChart >
+       </b-col>
+       <!-- <b-col v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''">
+         <b-button variant="warning">কালার বদলানো</b-button>
+       </b-col> -->
+     </b-row> 
     </center>
   </div>
 </template>
@@ -62,8 +72,8 @@ export default {
     return {
       manualDataInput: true,
       chart_config: {
-         key: 'value1',
-        value: 'value2',
+        key: 'value2',
+        value: 'value1',
         color: {scheme: 'schemeTableau10'},
         radius: {inner: 80}
       },
@@ -83,13 +93,19 @@ export default {
       if (this.chart_data.length > 1) {
         this.chart_data.splice(index, 1);
       }
-      console.log(index);
+    },
+    fillData(){
+      this.chart_data = [
+        { value1: 30, value2: "Lorem", },
+        { value1: 21 , value2: "Ipsum", },
+        { value1: 20, value2: "Dolor", }
+      ];
     }
   },
   watch: {
     chart_data: {
       handler: function() {
-        console.log("changed data");
+        // console.log("changed data");
         this.reload = false;
         this.$nextTick(function() {
           this.reload = true;
@@ -115,6 +131,7 @@ input[type="number"] {
 }
 * {
   font-family: "Baloo Da 2";
+  overflow: hidden;
 }
 
 h6 {

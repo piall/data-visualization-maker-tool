@@ -7,6 +7,9 @@
         <li>পরের সারিতে যাওয়ার জন্য tab চাপুন</li>
         <li>সারি বাদ দেয়ার জন্য Ctrl + click করুন</li>
       </ul>
+      <b-button variant="warning" @click="fillData">
+        ডেমো ডেটা ব্যাবহার করুন
+      </b-button>
       <b-card-group deck class="mx-1 my-3">
         <b-card header="আপনার ডেটা দিন" header-tag="header">
           <b-row
@@ -70,11 +73,19 @@
           </b-row>
         </b-card>
       </b-card-group> 
-      <D3BarChart
-        :config="chart_config"
-        :datum="chart_data"
-        v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!='' && chart_data[0].value4!='' && chart_data[0].value5!=''"
-      ></D3BarChart>
+      <b-row>
+       <b-col md="10">
+           <D3BarChart
+            :config="chart_config"
+            :datum="chart_data"
+            v-if="reload && chart_data[0].value1!='' && chart_data[0].value2!='' && chart_data[0].value3!='' && chart_data[0].value4!='' && chart_data[0].value5!=''"
+          ></D3BarChart>
+       </b-col>
+       <!-- <b-col v-if="reload && chart_data[0].start!='' && chart_data[0].end!='' && chart_data[0].name!=''">
+         <b-button variant="warning">কালার বদলানো</b-button>
+       </b-col> -->
+     </b-row>
+     
     </center>
   </div>
 </template>
@@ -106,6 +117,12 @@ export default {
             value4: '#C92C39',
           },
         },
+        margin: {
+          top: 10,
+          right: 200,
+          bottom: 20,
+          left: 200
+        },
       },
     };
   },
@@ -120,7 +137,14 @@ export default {
       if (this.chart_data.length > 1) {
         this.chart_data.splice(index, 1);
       }
-      console.log(index);
+      // console.log(index);
+    },
+    fillData(){
+      this.chart_data = [
+        {value1: 1648, value2: 9613, value3: 1390, value4: 9130, value5: '2007'},
+        {value1: 2479, value2: 6315, value3: 1560, value4: 6150, value5: '2008'},
+        {value1: 3200, value2: 12541, value3: 5421, value4: 2541, value5: '2009'},
+      ];
     }
   },
   watch: {
@@ -152,6 +176,7 @@ input[type="number"] {
 }
 * {
   font-family: "Baloo Da 2";
+  overflow: hidden;
 }
 
 h6 {
