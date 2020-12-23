@@ -86,17 +86,17 @@ export default {
   },
   methods: {
     register() {
-      console.log(this.email);
-      console.log(this.password);
+      // console.log(this.email);
+      // console.log(this.password);
       let newUser = {
         email: this.email,
         password: this.password
       };
       axios.post("http://localhost:5000/signup", newUser).then(
-        res => {
+        function res () {
           console.log(res)
         },
-        err => {
+        function err () {
           console.log(err.response);
         }
       );

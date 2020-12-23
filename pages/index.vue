@@ -22,10 +22,6 @@
         <h4>wfRyqvjvB‡Rkb mg~n</h4>
         <div class="mb-2 my-3">
           <div class="row no-gutters d-flex justify-content-center">
-            <!-- <div class="cols">
-              <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
-              <p>হিস্টোগ্রাম</p>
-            </div> -->
             <div class="cols">
               <b-avatar  href="/visualization/slopeChart" class="mx-4" src="~assets/D3SlopeChart.svg" size="8rem"></b-avatar>
               <p>স্লপ চার্ট</p>
@@ -39,28 +35,8 @@
               <p>বার চার্ট</p>
             </div>
             <div class="cols">
-              <b-avatar class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
-              <p>স্কেটার প্লট</p>
-            </div>
-            <div class="cols">
               <b-avatar  href="/visualization/lineChart" class="mx-4" src="~assets/D3LineChart.svg" size="8rem"></b-avatar>
               <p>লাইন চার্ট</p>
-            </div>
-            <!-- <div class="cols">
-              <b-avatar  href="/visualization/slicesChart" class="mx-4" src="~assets/D3SlicesChart.svg" size="8rem"></b-avatar>
-              <p>স্লাইসেস চার্ট</p>
-            </div> -->
-            <div class="cols">
-              <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
-              <p>হিট ম্যাপ</p>
-            </div>
-            <div class="cols">
-              <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
-              <p>Hexagonal Binning</p>
-            </div>
-            <div class="cols">
-              <b-avatar  href="" class="mx-4" src="~assets/spaceship.svg" size="8rem"></b-avatar>
-              <p>Contour Plot</p>
             </div>
           </div>
         </div>
