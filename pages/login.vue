@@ -44,6 +44,7 @@
 </template>
   
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -52,11 +53,21 @@ export default {
     }
   },
   methods: {
-    login() {
+      login() {
       let user = {
         email: this.email,
         password: this.password
       }
+      axios.post('http://localhost:5000/loginUser', user)
+        .then(res => {
+          if (res.status === 200) {
+            localStorage.setItem('token', res.data.token);
+            this.$router.push('/landing');
+          }
+        }, err => {
+          console.log(err.response);
+          this.error = err.response.data.error
+      })
     }
   }
 }
