@@ -1,8 +1,12 @@
 <template>
   <div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <Header :loginStatus="loginStatus" />
     <Nuxt />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -32,6 +36,7 @@
 
 body {
   background-color: #f9f7cf;
+  font-family: 'Baloo Da 2';
 }
 /* 
 html {
@@ -48,6 +53,8 @@ html {
 </style>
 
 <script>
+// import * as d3 from "d3";
+
 export default {
   data() {
     return {

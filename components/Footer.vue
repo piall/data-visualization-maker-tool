@@ -1,9 +1,5 @@
 <template #footer>
-  <center class="fixed-bottom">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+  <center>
     <span>প্রজেক্ট কোড</span>
     <button
       class="btn"
@@ -21,6 +17,7 @@ export default {};
 <style scoped>
 center {
   background-color: #2f2e41;
+  position: relative;
 }
 span {
   color: white;

@@ -56,7 +56,7 @@
         </b-card>
       </b-card-group> 
        <b-row>
-       <b-col md="10">
+       <b-col md="12">
           <D3LineChart 
         :config="chart_config"
         :datum="chart_data"
@@ -98,9 +98,9 @@ export default {
         },
         margin: {
           top: 20,
-          right: 20,
+          right: 100,
           bottom: 20,
-          left: 140
+          left: 100
         },
       },
       // count:2010

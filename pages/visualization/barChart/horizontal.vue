@@ -56,7 +56,7 @@
         </b-card>
       </b-card-group> 
       <b-row>
-       <b-col md="10">
+       <b-col md="12">
           <D3BarChart 
           :config="chart_config"
           :datum="chart_data"

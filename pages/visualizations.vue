@@ -28,8 +28,15 @@
             <input
               type="file"
               style="background-color:#2f2e41; color: white; padding:3px; border-radius:4px"
+              @change="onFileChange"
+              v-if="!image"
             />
+            <div v-else>
+    <img :src="image" />
+    <button @click="removeImage">Remove image</button>
+  </div>
           </div>
+          
         </b-col>
       </b-row>
       <!-- <p>ভিজুয়ালেইজেশন এর ধরন বাছুন</p>
@@ -81,6 +88,7 @@
 export default {
   data() {
     return {
+      image: '',
       a: [1, 2, 3],
       b: ["a", "b", "c"],
       row: "",
@@ -131,19 +139,34 @@ export default {
       this.manualInput = true;
       this.fileUpload = false;
     },
-    selectFile() {},
-    x_check() {
-      this.row = this.a;
+    inputData() {
+      this.inputData = JSON.parse(val);
     },
-    y_check() {
-      this.col = this.b;
+    onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length)
+        return;
+      this.createImage(files[0]);
+    },
+    createImage(file) {
+      var image = new Image();
+      var reader = new FileReader();
+      var vm = this;
+
+      reader.onload = (e) => {
+        vm.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    removeImage: function (e) {
+      this.image = '';
     }
   },
-  watch: {
-    inputData: function(val) {
-      this.inputData = JSON.parse(val);
-    }
-  }
+  // watch: {
+  //   inputData: function(val) {
+  //     this.inputData = JSON.parse(val);
+  //   }
+  // }
 };
 </script>
 
@@ -168,5 +191,11 @@ li:hover {
   color: #2f2e41;
   font-weight: bold;
   cursor: pointer;
+}
+img {
+  width: 30%;
+  margin: auto;
+  display: block;
+  margin-bottom: 10px;
 }
 </style>
