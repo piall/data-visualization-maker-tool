@@ -10,7 +10,8 @@
         <NuxtLink to="/savedVisualization" v-if="loginStatus">সেভ করা ভিজুয়ালাইজেশন</NuxtLink>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto" v-if="loginStatus">
-        <NuxtLink to="/">লগ আউট</NuxtLink>
+        <!-- <NuxtLink to="/" @click="logout">লগ আউট</NuxtLink> -->
+        <b-button @click="logout">লগ আউট</b-button>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto" v-else>
         <NuxtLink to="/register">একাউন্ট তৈরি করুন</NuxtLink>
@@ -23,7 +24,14 @@
 
 <script scoped>
 export default {
-  props: ["loginStatus"]
+  props: ["loginStatus"],
+  methods: {
+    logout() {
+      this.$store.commit("setLoginStatus", false);
+      localStorage.clear();
+      this.$router.push('/');
+    }
+  }
 };
 </script>
 
