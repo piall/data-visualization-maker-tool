@@ -78,8 +78,6 @@ export default {
 
 <style lang="css" scoped>
 div.container-lg {
-  /* background-color: aqua; */
-  /* width: 100%; */
   display: flex;
   align-items: center;
   text-align: center;
