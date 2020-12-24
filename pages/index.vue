@@ -2,7 +2,6 @@
   <div>
     <center>
       <section class="col-md-6 my-3">
-        <!-- <h4>logo</h4> -->
         <h4>¯^vMZ</h4>
         <b-img center src="~/assets/music.svg" class="my-3" style="max-width:30%"></b-img>
         <p>কোন একাউন্ট খোলার ঝামেলা না নিয়ে আপনি আপনার ম্যনুয়াল ইনপুট করা ডেটা দিয়ে অথবা কোন ডেটাসেট থেকে আপনার পছন্দের ভিজুয়ালাইজেশন বানাতে পারবেন। সেটি চাইলে .jpg, svg ফরমেট তে সেভ করা যাবে আপনার ডিভাইসে এবং যদি একাউন্ট থাকে তাহলে অনলাইনেও। যদি সিম্পল লিনিয়ার রিগ্ররেশন ব্যবহার করা যায় এমন ডেটা থাকে সেক্ষেত্রে রিয়েল টাইম প্রেডিকশন দেখতে পারবেন।</p>
@@ -22,6 +21,10 @@
         <h4>wfRyqvjvB‡Rkb mg~n</h4>
         <div class="mb-2 my-3">
           <div class="row no-gutters d-flex justify-content-center">
+            <div class="cols">
+              <b-avatar  href="/visualization/wordCloud" class="mx-4" src="~assets/D3WordsCloud.svg" size="8rem"></b-avatar>
+              <p>ওয়ার্ডস ক্লাউড</p>
+            </div>
             <div class="cols">
               <b-avatar  href="/visualization/slopeChart" class="mx-4" src="~assets/D3SlopeChart.svg" size="8rem"></b-avatar>
               <p>স্লপ চার্ট</p>
@@ -55,10 +58,6 @@ export default {
 
 
 <style lang="css" scoped>
-/* body {
-  background-image: url("paper.gif");
-  background-color: #cccccc;
-} */
 
 .bottom-content {
   padding-bottom: 10px;
