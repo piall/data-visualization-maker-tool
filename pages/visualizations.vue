@@ -4,10 +4,6 @@
       <b-row class="p-5">
         <b-col md="12" lg="4">
           <ul>
-            <li :class="{ active: manualInput }" @click="toggleManualInput">
-              <i class="fa fa-clipboard"></i>
-              ম্যানুয়াল ইনপুট
-            </li>
             <li :class="{ active: fileUpload }" @click="toggleFileUpload">
               <i class="fa fa-upload"></i>
               আপলোড করুন
@@ -15,56 +11,51 @@
           </ul>
         </b-col>
         <b-col>
-          <div v-if="manualInput">
-            <b-form-textarea
-              id="textarea-rows"
-              placeholder="আপনার JSON ডেটা পেস্ট করুন"
-              rows="8"
-              v-model="inputData"
-            ></b-form-textarea>
-            <b-button variant="success" @click="convert" class="my-2">convert</b-button>
-          </div>
           <div v-if="fileUpload" class="box">
             <p>ফাইল আপলোড করুন</p>
             <input
               type="file"
               style="background-color:#2f2e41; color: white; padding:3px; border-radius:4px"
-              @change="onFileChange"
             />
           </div>
-          
         </b-col>
       </b-row>
-      
-      <!-- {{ inputData }} -->
     </b-container>
+      <center>
+        <div class="mb-2 my-3">
+          <div class="row no-gutters d-flex justify-content-center">
+            <div class="cols">
+              <b-avatar  href="/visualization/wordCloud" class="mx-4" src="~assets/D3WordsCloud.svg" size="8rem"></b-avatar>
+              <p>ওয়ার্ডস ক্লাউড</p>
+            </div>
+            <div class="cols">
+              <b-avatar  href="/visualization/slopeChart" class="mx-4" src="~assets/D3SlopeChart.svg" size="8rem"></b-avatar>
+              <p>স্লপ চার্ট</p>
+            </div>
+            <div class="cols">
+              <b-avatar  href="/visualization/pieChart" class="mx-4" src="~assets/D3PieChart.svg" size="8rem"></b-avatar>
+              <p>পাই চার্ট</p>
+            </div>
+            <div class="cols">
+              <b-avatar  href="/visualization/barChart" class="mx-4" src="~assets/D3BarChart.svg" size="8rem"></b-avatar>
+              <p>বার চার্ট</p>
+            </div>
+            <div class="cols">
+              <b-avatar  href="/visualization/lineChart" class="mx-4" src="~assets/D3LineChart.svg" size="8rem"></b-avatar>
+              <p>লাইন চার্ট</p>
+            </div>
+          </div>
+        </div>
+        </center>
   </div>
 </template>
 <script src="https://d3js.org/d3.v6.min.js"></script>
 <script>
 
-// import * as d3 from "d3";
-
 export default {
   data() {
     return {
-      inputData: "",
-      manualInput: true,
-      fileUpload: false,
-    }
-  },
-  methods: {
-    toggleFileUpload() {
-      this.manualInput = false;
-      this.fileUpload = true;
-    },
-    toggleManualInput() {
-      this.manualInput = true;
-      this.fileUpload = false;
-    },
-    convert(){
-      var obj = JSON.parse(this.inputData)
-      console.log(obj)
+      fileUpload: true,
     }
   },
 };
@@ -97,5 +88,13 @@ img {
   margin: auto;
   display: block;
   margin-bottom: 10px;
+}
+
+.b-avatar{
+  background-color: #fdf9ad;
+}
+
+.b-avatar:hover{
+  background-color:  #fcf798;
 }
 </style>
