@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/signup", async(req, res, next) => {
+app.post("https://data-visualization-maker-tool.herokuapp.com/signup", async(req, res, next) => {
   const newUser = new User({
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 10)
@@ -33,7 +33,7 @@ app.post("/signup", async(req, res, next) => {
   })
 })
 
-app.post("/loginUser", (req, res, next) => {
+app.post("https://data-visualization-maker-tool.herokuapp.com/loginUser", (req, res, next) => {
   User.findOne({ email: req.body.email }, (err, user) => {
     if (err) return res.status(500).json({
       title: "server error",
