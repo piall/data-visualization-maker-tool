@@ -85,7 +85,7 @@ export default {
          email: this.email,
          password: this.password
          };
-        axios.post("http://localhost:5000/signup", newUser)
+        axios.post("/signup", newUser)
         .then(res => {
           this.error = "";
           this.$router.push('/login');
