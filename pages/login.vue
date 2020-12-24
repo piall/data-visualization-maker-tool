@@ -59,7 +59,7 @@ export default {
         email: this.email,
         password: this.password
       }
-      axios.post("/loginUser", user)
+      axios.post("https://data-visualization-maker-tool.herokuapp.com/loginUser", user)
         .then(res => {
           if (res.status === 200) {
             localStorage.setItem("token", res.data.token);

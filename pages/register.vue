@@ -85,7 +85,7 @@ export default {
          email: this.email,
          password: this.password
          };
-        axios.post("/signup", newUser)
+        axios.post("https://data-visualization-maker-tool.herokuapp.com/signup", newUser)
         .then(res => {
           this.error = "";
           this.$router.push('/login');
