@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- <p>{{errorMessageEmail}}</p> -->
-    <!-- <p>{{errorMessagePass}}</p> -->
     <b-row>
       <b-col
         xs="8"
@@ -24,9 +22,6 @@
           >
             <b-container fluid>
               <b-row class="my-2">
-                <!-- <b-col sm="3">
-            <label for="input-none">ইমেইল:</label>
-                </b-col>-->
                 <b-col>
                   <b-form-input
                     id="input-none"
@@ -34,14 +29,9 @@
                     v-model="email"
                     placeholder="আপনার ইমেইল দিন"
                   ></b-form-input>
-                  <!-- state null will make like normal input box -->
                 </b-col>
               </b-row>
-
               <b-row class="my-2">
-                <!-- <b-col sm="3">
-            <label for="input-valid">পাসওয়ার্ড:</label>
-                </b-col>-->
                 <b-col>
                   <b-form-input
                     id="input-valid"
@@ -49,20 +39,8 @@
                     v-model="password"
                     placeholder="আপনার পাসওয়ার্ড দিন (সর্বনিম্ন ৬ অক্ষর)"
                   ></b-form-input>
-                  <!-- state true will make the icon green -->
                 </b-col>
               </b-row>
-              <!-- <b-row class="my-2"> -->
-              <!-- <b-col> -->
-              <!-- <b-form-input
-                    id="input-valid"
-                    type="password"
-                    :state="null"
-                    placeholder="পুনরায় আপনার পাসওয়ার্ড দিন"
-                  ></b-form-input> -->
-              <!-- state false will make the icon cross -->
-              <!-- </b-col> -->
-              <!-- </b-row> -->
             </b-container>
             <b-button variant="primary" @click="register()"
               >একাউন্ট খুলুন</b-button
@@ -78,39 +56,35 @@
 
 <script>
 import axios from "axios";
-// var validator = require("email-validator");
+var validator = require("email-validator");
 export default {
-  name: "Signup",
+  name: "Registration",
   data() {
     return {
       email: "",
       password: "",
-      emailIsOk: true,
+      emailIsOk: false,
       passwordIsOk: false,
-      errorMessageEmail: "",
-      errorMessagePass: "",
       error: ""
     };
   },
   methods: {
-    // emailCheck() {
-    //   if(validator.validate(this.email)) this.emailIsOk = true;
-    //   else this.errorMessageEmail = "আপনার ইমেল ফরমেট ঠিক নেই অথবা আগে থেকেই রেজিষ্টার করা আছে";
-    // },
+    emailCheck() {
+      if(validator.validate(this.email)) this.emailIsOk = true;
+      else alert("আপনার ইমেল ফরমেট ঠিক নেই অথবা আগে থেকেই রেজিষ্টার করা আছে");
+    },
     passwordCheck(){
-      if(this.password.length > 6) this.passwordIsOk = true;
-      // else this.errorMessagePass = "আপনার পাসওয়ার্ড ৬ অক্ষরের চেয়ে ছোট";
+      if(this.password.length > 5) this.passwordIsOk = true;
+      else alert("আপনার পাসওয়ার্ড ৬ অক্ষরের চেয়ে ছোট");
     },
     register() {
-      // console.log(this.email);
-      // console.log(this.password);
-      // this.emailCheck();
+      this.emailCheck();
       this.passwordCheck();
-      if(this.password.length > 6) {
+      if(this.passwordIsOk && this.emailIsOk) {
          let newUser = {
          email: this.email,
          password: this.password
-      };
+         };
         axios.post("http://localhost:5000/signup", newUser)
         .then(res => {
           this.error = "";
@@ -120,8 +94,6 @@ export default {
           this.error = err.response.data.error
         })
       }
-      // else alert("আপনার ইমেইল / পাসওয়ার্ড ইনভেলিড ফরমেটের ")
-      else alert("আপনার পাসওয়ার্ড ৬ অক্ষরের চেয়ে ছোট")
     }
   }
 };
@@ -129,18 +101,13 @@ export default {
 
 <style lang="css" scoped>
 div.container-lg {
-  /* background-color: aqua; */
-  /* width: 100%; */
   display: flex;
   align-items: center;
   text-align: center;
 }
 .card {
-  /* margin: 155px; */
   padding: 20px;
   font-family: "Baloo Da 2";
-
-  /* max-width: 50%; */
 }
 
 .card-img-top {
