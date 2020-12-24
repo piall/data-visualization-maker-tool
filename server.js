@@ -6,7 +6,7 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const User = require("./models/User");
 
-var mongoDB = "mongodb://localhost:27017/data_viz";
+var mongoDB = process.env.MONGO_URL || "mongodb://localhost:27017/data_viz";
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true,})
 .then(() => console.log("connected to database"))
 .catch(() => console.error("error : ", err))

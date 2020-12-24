@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "heroku-postbuild": "nuxt build"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^3.0.2",
